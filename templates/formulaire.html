@@ -1,0 +1,47 @@
+ À faire
+Partie A — Un formulaire en GET
+Créez le template templates/formulaire.html :
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Formulaire</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Faisons connaissance</h1>
+    <form action="/salut" method="get">
+        <label>Votre prénom : <input type="text" name="prenom"></label>
+        <label>Votre ville : <input type="text" name="ville"></label>
+        <button type="submit">Envoyer</button>
+    </form>
+</body>
+</html>
+action="/salut" : l'URL où le formulaire envoie les données.
+name="prenom" : le nom du paramètre qui sera envoyé.
+Ajoutez ces deux routes dans flask_app.py :
+@app.get("/formulaire")
+def formulaire():
+    return render_template("formulaire.html")
+
+
+@app.get("/salut")
+def salut():
+    prenom = request.args.get("prenom", "inconnu")
+    ville = request.args.get("ville", "nulle part")
+    return f"Bonjour {prenom}, qui vient de {ville} !"
+Commit, visitez /formulaire, remplissez-le et envoyez-le. Regardez bien la barre d'adresse.
+Partie B — Le même formulaire en POST
+Dans formulaire.html, remplacez method="get" par method="post".
+Dans flask_app.py, modifiez la route /salut :
+@app.route("/salut", methods=["GET", "POST"])
+def salut():
+    if request.method == "POST":
+        prenom = request.form.get("prenom", "inconnu")
+        ville = request.form.get("ville", "nulle part")
+    else:
+        prenom = request.args.get("prenom", "inconnu")
+        ville = request.args.get("ville", "nulle part")
+    return f"Bonjour {prenom}, qui vient de {ville} ! (reçu en {request.method})"
+Pour une requête POST, les données se lisent dans request.form au lieu de request.args.
+Commit, puis renvoyez le formulaire. Regardez à nouveau la barre d'adresse.
