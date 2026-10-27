@@ -20,6 +20,10 @@ app = Flask(__name__)
 def accueil():
     return "Bienvenue sur le site de Léa 🚀"
 
+@app.get("/presentation")
+def presentation():
+    return "Je m'appelle Léa et je suis étudiante en informatique."
+
 
 # ---------------------------------------------------------------
 #  Ajoutez vos nouvelles routes ci-dessous 👇
