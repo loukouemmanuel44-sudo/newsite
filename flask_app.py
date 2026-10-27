@@ -24,11 +24,13 @@ def accueil():
 def presentation():
     return "Je m'appelle Léa et je suis étudiante en informatique."
 
-
 # ---------------------------------------------------------------
 #  Ajoutez vos nouvelles routes ci-dessous 👇
 # ---------------------------------------------------------------
 
+@app.get("/loisirs")
+def loisirs():
+    return "J'aime la boxe anglaise, l'informatique, le développement web et les jeux vidéo."
 
 
 # ---------------------------------------------------------------
