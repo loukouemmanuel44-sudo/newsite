@@ -22,19 +22,7 @@ def accueil():
 
 @app.get("/presentation")
 def presentation():
-    return """
-    <h1>Emmanuel Loukou</h1>
-    <p>Je suis étudiant en <strong>première année d'informatique à EPSI Paris</strong>.</p>
-
-    <h2>Ce que j'aime</h2>
-    <ul>
-        <li>La boxe anglaise</li>
-        <li>Le développement web</li>
-        <li>Les jeux vidéo</li>
-    </ul>
-
-    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" width="100">
-    """
+    return render_template("presentation.html", prenom="Léa", nom="Martin")
 
 # ---------------------------------------------------------------
 #  Ajoutez vos nouvelles routes ci-dessous 👇
