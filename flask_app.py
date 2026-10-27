@@ -8,7 +8,7 @@
 #  Les consignes sont dans le dossier "exercices/".
 # ---------------------------------------------------------------
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, abort
 
 app = Flask(__name__)
 
@@ -53,6 +53,23 @@ def salut():
 @app.get("/loisirs")
 def loisirs():
     return "J'aime la boxe anglaise, l'informatique, le développement web et les jeux vidéo."
+
+# 3xx : une redirection
+@app.get("/home")
+def home():
+    return redirect("/")
+
+
+# 4xx : un accès interdit
+@app.get("/secret")
+def secret():
+    abort(403)
+
+
+# Une page d'erreur 404 personnalisée
+@app.errorhandler(404)
+def page_introuvable(erreur):
+    return render_template("404.html"), 404
 
 
 # ---------------------------------------------------------------
