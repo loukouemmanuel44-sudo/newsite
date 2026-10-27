@@ -52,6 +52,10 @@ def salut():
 #  Ajoutez vos nouvelles routes ci-dessous 👇
 # ---------------------------------------------------------------
 
+@app.get("/horloge")
+def horloge():
+    return render_template("horloge.html")
+
 @app.get("/loisirs")
 def loisirs():
     return "J'aime la boxe anglaise, l'informatique, le développement web et les jeux vidéo."
