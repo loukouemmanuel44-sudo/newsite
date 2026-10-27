@@ -1,10 +1,10 @@
 # 📒 Mon carnet de bord
 
-**Nom :** 
+**Nom :LOUKOU
 
-**Prénom :** 
+**Prénom :YAO EMMANUEL
 
-**Adresse de mon site :** https://______.pythonanywhere.com
+**Adresse de mon site :** https://nuelmaah.pythonanywhere.com
 
 > Modifiez ce fichier directement sur GitHub (icône crayon ✏️) pour répondre aux questions de chaque exercice.
 > Écrivez avec vos propres mots : une réponse courte et juste vaut mieux qu'un long copier-coller ! 🙂
@@ -15,11 +15,11 @@
 
 1. Où se trouve physiquement le code qui fabrique votre page : sur votre ordinateur, sur GitHub ou sur PythonAnywhere ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse : Le code est stocké sur GitHub, puis déployé sur PythonAnywhere où il est exécuté pour afficher le site web. Une copie existe aussi sur mon ordinateur pendant le développement. 
 
 2. Pourquoi votre voisin(e) peut-il voir votre site, alors que vous n'avez rien installé sur son ordinateur ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse : Mon voisin peut voir mon site car il est hébergé sur les serveurs de PythonAnywhere. Son navigateur accède au site via Internet et reçoit les pages web sans qu'il soit nécessaire d'installer quoi que ce soit sur son ordinateur.
 
 ---
 
@@ -27,15 +27,16 @@
 
 1. Dans l'URL `https://www.google.com/maps`, quel est le nom de domaine ? Quel est le chemin ?
 
-   > _Ma réponse :_ 
+> _Ma réponse :_ NOM DE DOMAINE : www.google.com
+               _ CHEMIN : /maps
 
 2. Que veut dire le message *Not Found* ? Qui l'a envoyé : votre navigateur ou le serveur ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ Le message Not Found signifie que la page ou la ressource demandée n'existe pas à l'adresse indiquée. Ce message est envoyé par le serveur, puis affiché par le navigateur.
 
 3. Que se passe-t-il si deux fonctions portent le même nom dans `flask_app.py` ? (Indice : essayez, puis lisez l'Error log.)
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ Si deux fonctions portent le même nom dans flask_app.py, la seconde écrase la première. Flask détecte ce conflit et affiche une erreur dans l'Error Log, car deux routes ne peuvent pas utiliser la même fonction de vue.
 
 ---
 
@@ -43,15 +44,18 @@
 
 1. Quelle est la différence entre ce que le serveur **envoie** et ce que le navigateur **affiche** ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ Le serveur envoie du code (HTML, CSS, JavaScript, images, etc.), tandis que le navigateur interprète ce code et affiche le résultat sous forme de page web lisible par l'utilisateur.
 
 2. À quoi servent les balises `<h1>`, `<p>`, `<ul>` et `<li>` ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ <h1> : crée un titre principal.
+                    <p> : crée un paragraphe de texte.
+                    <ul> : crée une liste non ordonnée (avec des puces).
+                    <li> : représente un élément de la liste.
 
 3. Pourquoi l'image s'affiche-t-elle alors qu'elle n'est pas sur votre serveur ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ L'image s'affiche parce qu'elle est stockée sur un autre serveur accessible sur Internet. Le navigateur télécharge directement l'image depuis son adresse (URL) et l'affiche dans la page, même si elle n'est pas hébergée sur mon serveur PythonAnywhere.
 
 ---
 
@@ -60,10 +64,18 @@
 1. Pourquoi est-ce une bonne idée de séparer le code Python et le HTML ? (Pensez à une équipe avec un développeur et un graphiste.)
 
    > _Ma réponse :_ 
+   
+   Séparer le code Python du HTML permet de mieux organiser le projet. 
+   Le développeur peut travailler sur la logique de l'application en Python, tandis que le graphiste ou web designer peut modifier l'apparence et la mise en page en HTML sans toucher au code Python.
+   
+   Cela facilite le travail en équipe, la maintenance et les évolutions du site.
 
 2. Les `{{ prenom }}` sont-ils remplacés par le serveur ou par le navigateur ? Comment l'avez-vous vérifié ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ Les {{ prenom }} sont remplacés par le serveur Flask avant que la page ne soit envoyée au navigateur.
+   > Le navigateur ne reçoit pas {{ prenom }}, mais directement la valeur correspondante (par exemple « Emmanuel »).
+
+Je l'ai vérifié en affichant le code source de la page dans le navigateur : on voit la valeur remplacée, et non {{ prenom }}.
 
 ---
 
@@ -71,15 +83,19 @@
 
 1. Quelle est la différence de rôle entre le HTML et le CSS ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ Le HTML sert à structurer le contenu de la page,
+   >  tandis que le CSS sert à définir l'apparence de ce contenu (couleurs, tailles, polices, espacements, disposition, etc.).
 
 2. Pour afficher votre page `/presentation`, combien de fichiers le navigateur doit-il télécharger ? (Vous pourrez le vérifier à l'exercice suivant !)
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ Pour afficher la page /presentation, le navigateur doit télécharger plusieurs fichiers :
+Le fichier HTML de la page.
+Le fichier CSS (si la page utilise une feuille de style externe).
+Les éventuelles images affichées sur la page.
 
 3. Pourquoi faut-il parfois faire **Ctrl + F5** pour voir les changements de CSS ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ Ctrl + F5 force le navigateur à recharger complètement la page et à télécharger à nouveau les fichiers, ce qui permet de voir immédiatement les modifications du CSS.
 
 ---
 
@@ -87,7 +103,7 @@
 
 1. Que signifie HTTP ? Qui envoie la **requête** et qui envoie la **réponse** ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ HTTP signifie HyperText Transfer Protocol. Le navigateur envoie la requête HTTP au serveur, et le serveur renvoie la réponse HTTP au navigateur.
 
 2. Combien de requêtes votre page `/presentation` a-t-elle déclenchées ? Lesquelles ?
 
